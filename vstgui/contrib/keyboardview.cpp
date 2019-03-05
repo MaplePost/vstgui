@@ -298,7 +298,7 @@ void KeyboardViewRangeSelector::setSelectionRange (const Range& _range)
 	{
 		selectionRange = _range;
 		invalid ();
-		listeners.forEach ([this] (auto& listener) { listener->onKeyRangeChanged (this); });
+		listeners.forEach ([this] ( IKeyboardViewKeyRangeChangedListener*& listener) { listener->onKeyRangeChanged (this); });
 	}
 }
 
